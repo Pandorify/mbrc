@@ -4,7 +4,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.widget.RemoteViews
 import com.kelsos.mbrc.R
-import com.kelsos.mbrc.features.player.TrackInfo
+import com.kelsos.mbrc.common.state.PlayingTrack
 import com.kelsos.mbrc.platform.mediasession.RemoteIntentCode.Next
 import com.kelsos.mbrc.platform.mediasession.RemoteIntentCode.Play
 import com.kelsos.mbrc.platform.mediasession.RemoteIntentCode.Previous
@@ -34,7 +34,7 @@ class WidgetSmall : WidgetBase() {
 
   override fun setupTrackInfo(
     views: RemoteViews,
-    info: TrackInfo,
+    info: PlayingTrack,
   ) {
     views.setTextViewText(R.id.widget_small_line_one, info.title)
     views.setTextViewText(R.id.widget_small_line_two, info.artist)
