@@ -37,6 +37,10 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
+      - name: Remove LeakCanary from build.gradle
+        run: |
+          sed -i '/leakcanary/d' app/build.gradle
+
       - name: Build GitHub flavor debug APK
         run: ./gradlew assembleGithubDebug --no-daemon
 
